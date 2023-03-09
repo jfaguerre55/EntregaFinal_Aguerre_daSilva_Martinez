@@ -17,15 +17,15 @@
 
 <div class="container text-center">
     <div class="row">
-            {% for software in softwares %}
+            {% for soft in software %}
             <div class="col-sm-6 align-items-center">
                 <div class="card-body">
-                <img src="{{software.imagenInstrumento.url}}" class="" width="100px">
-                {{software.titulo}}
-                <a href="{% url 'software' software.id %}"><i class="bi bi-eye"></i></a>
+                <img src="{{software.imagen_servicio.url}}" class="" width="100px">
+                {{soft.titulo}}
+                <a href="{% url 'software-detalle' soft.id %}"><i class="bi bi-eye"></i></a>
                 {% if user.id == software.usuario.id %}
-                <a href="{% url 'software_editar' software.id %}"><i class="bi bi-pencil-fill"></i></a>
-                <a href="{% url 'software_eliminar' software.id %}"><i class="bi bi-trash text-danger"></i></a>
+                <a href="{% url 'software_editar' soft.id %}"><i class="bi bi-pencil-fill"></i></a>
+                <a href="{% url 'software_eliminar' soft.id %}"><i class="bi bi-trash text-danger"></i></a>
                 <br>
                 <br>
                 <br>
