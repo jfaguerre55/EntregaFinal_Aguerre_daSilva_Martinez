@@ -97,81 +97,81 @@ def about(request):
 # IMPRESION 3D
 
 class Impresion3DLista(LoginRequiredMixin, ListView):
-    context_object_name = 'impresion3d-lista'
+    context_object_name = 'impresion3d'
     queryset = Servicio.objects.filter(instrumento__startswith='impresion3d')
     template_name = 'App_Services/impresion3d-lista.html'
     login_url = '/login/'
 
 class Impresion3DDetalle(LoginRequiredMixin, DetailView):
     model = Servicio
-    context_object_name = 'impresion3d-detalle'
+    context_object_name = 'impresion3d'
     template_name = 'App_Services/impresion3d-detalle.html'
 
 class Impresion3DUpdate(LoginRequiredMixin, UpdateView):
     model = Servicio
     form_class = ActualizacionServicio
     success_url = reverse_lazy('impresion3d-lista')
-    context_object_name = 'impresion3d-editar'
+    context_object_name = 'impresion3d'
     template_name = 'App_Services/impresion3d-editar.html'
 
 class Impresion3DDelete(LoginRequiredMixin, DeleteView):
     model = Servicio
     success_url = reverse_lazy('impresion3d-lista')
-    context_object_name = 'impresion3d-detalle'
+    context_object_name = 'impresion3d'
     template_name = 'App_Services/impresion3d-borrar.html'
 
 
 # ESCANEO 3D
 
 class Escaneo3DLista(LoginRequiredMixin, ListView):
-    context_object_name = 'escaneo3d-lista'
+    context_object_name = 'escaneo3d'
     queryset = Servicio.objects.filter(instrumento__startswith='escaneo3d')
     template_name = 'App_Services/escaneo3d-lista.html'
     login_url = '/login/'
 
 class Escaneo3DDetalle(LoginRequiredMixin, DetailView):
     model = Servicio
-    context_object_name = 'escaneo3d-detalle'
+    context_object_name = 'escaneo3d'
     template_name = 'App_Services/escaneo3d-detalle.html'
 
 class Escaneo3DUpdate(LoginRequiredMixin, UpdateView):
     model = Servicio
     form_class = ActualizacionServicio
     success_url = reverse_lazy('escaneo3d-lista')
-    context_object_name = 'escaneo3d-editar'
+    context_object_name = 'escaneo3d'
     template_name = 'App_Services/escaneo3d-editar.html'
 
 class Escaneo3DDelete(LoginRequiredMixin, DeleteView):
     model = Servicio
     success_url = reverse_lazy('escaneo3d-lista')
-    context_object_name = 'escaneo3d-detalle'
+    context_object_name = 'escaneo3d'
     template_name = 'App_Services/escaneo3d-borrar.html'
 
 
 # SOFTWARE
 
 class SoftwareLista(LoginRequiredMixin, ListView):
-    context_object_name = 'software-lista'
+    context_object_name = 'software'
     queryset = Servicio.objects.filter(instrumento__startswith='software')
     template_name = 'App_Services/software-lista.html'
     login_url = '/login/'
 
 class SoftwareDetalle(LoginRequiredMixin, DetailView):
     model = Servicio
-    context_object_name = 'software-detalle'
+    context_object_name = 'software'
     template_name = 'App_Services/software-detalle.html'
 
 class SoftwareUpdate(LoginRequiredMixin, UpdateView):
     model = Servicio
     form_class = ActualizacionServicio
     success_url = reverse_lazy('software-lista')
-    context_object_name = 'software-editar'
+    context_object_name = 'software'
     template_name = 'App_Services/software-editar.html'
 
 class SoftwareDelete(LoginRequiredMixin, DeleteView):
     model = Servicio
     success_url = reverse_lazy('software-lista')
-    context_object_name = 'software-detalle'
+    context_object_name = 'software'
     template_name = 'App_Services/software-borrar.html'
 
 
@@ -179,27 +179,27 @@ class SoftwareDelete(LoginRequiredMixin, DeleteView):
 # OTRO
 
 class OtrosLista(LoginRequiredMixin, ListView):
-    context_object_name = 'otros-lista'
+    context_object_name = 'otros'
     queryset = Servicio.objects.filter(servicio__startswith='otros')
     template_name = 'App_Services/otros-lista.html'
     login_url = '/login/'
 
 class OtrosDetalle(LoginRequiredMixin, DetailView):
     model = Servicio
-    context_object_name = 'otros-detalle'
+    context_object_name = 'otros'
     template_name = 'App_Services/otros-detalle.html'
 
 class OtrosUpdate(LoginRequiredMixin, UpdateView):
     model = Servicio
     form_class = ActualizacionServicio
     success_url = reverse_lazy('otros-lista')
-    context_object_name = 'otros-editar'
+    context_object_name = 'otros'
     template_name = 'App_Services/otros_editar.html'
 
 class OtrosDelete(LoginRequiredMixin, DeleteView):
     model = Servicio
     success_url = reverse_lazy('otros-lista')
-    context_object_name = 'otros-detalle'
+    context_object_name = 'otros'
     template_name = 'App_Services/otros_eliminar.html'
 
 
