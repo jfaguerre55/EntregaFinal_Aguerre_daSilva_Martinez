@@ -9,14 +9,13 @@
 
 
 <p><h4>{{software.titulo}}</h4></p>
-{% if software.imagenInstrumento %}
-    <p><img src="{{software.imagenInstrumento.url}}" alt=""></p>
+{% if software.imagen_servicio %}
+    <p><img src="{{software.imagen_servicio.url}}" alt=""></p>
 {% endif %}
 <p>Marca: {{software.marca}}</p>
 <p>Modelo: {{software.modelo}}</p>
 <p>Descripción: {{software.descripcion}}</p>
-<p>Año: {{software.year}}</p>
-<p>Precio(US$): {{software.precio}}</p>
+<p>Año: {{software.anio}}</p>
 <p>Teléfono de Contacto: {{software.telefonoContacto}}</p>
 <p>Email de Contacto: {{software.emailContacto}}</p>
 
@@ -27,7 +26,7 @@
     <br>
     <div class="container">
     {% if not software.comentarios.all %}
-        No han comentado este instrumento
+        No han comentado este software
     {% else %}
         {% for comentario in software.comentarios.all %}
         <p><strong>{{comentario.nombre}}</strong></p>

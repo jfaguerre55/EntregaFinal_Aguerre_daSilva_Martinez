@@ -20,12 +20,12 @@
             {% for escan3d in escaneo3d %}
             <div class="col-sm-6 align-items-center">
                 <div class="card-body">
-                <img src="{{escaneo3d.imagenInstrumento.url}}" class="" width="100px">
-                {{escaneo3d.titulo}}
-                <a href="{% url 'escaneo3d' escaneo3d.id %}"><i class="bi bi-eye"></i></a>
-                {% if user.id == escaneo3d.usuario.id %}
-                <a href="{% url 'escaneo3d_editar' escaneo3d.id %}"><i class="bi bi-pencil-fill"></i></a>
-                <a href="{% url 'escaneo3d_eliminar' escaneo3d.id %}"><i class="bi bi-trash text-danger"></i></a>
+                <img src="{{escan3d.imagen_servicio.url}}" class="" width="100px">
+                {{escan3d.titulo}}
+                <a href="{% url 'escaneo3d-detalle' escan3d.id %}"><i class="bi bi-eye"></i></a>
+                {% if user.id == escan3d.usuario.id %}
+                <a href="{% url 'escaneo3d-editar' escan3d.id %}"><i class="bi bi-pencil-fill"></i></a>
+                <a href="{% url 'escaneo3d-borrar' escan3d.id %}"><i class="bi bi-trash text-danger"></i></a>
                 <br>
                 <br>
                 <br>
