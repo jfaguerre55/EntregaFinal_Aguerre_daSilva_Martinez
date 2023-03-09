@@ -20,12 +20,12 @@
             {% for i3d in impresion3d %}
             <div class="col-sm-6 align-items-center">
                 <div class="card-body">
-                <img src="{{impresion3d.imagenInstrumento.url}}" class="" width="100px">
+                <img src="{{i3d.imagen_servicio.url}}" class="" width="100px">
                 {{i3d.titulo}}
-                <a href="{% url 'impresion3d' impresion3d.id %}"><i class="bi bi-eye"></i></a>
-                {% if user.id == impresion3d.usuario.id %}
-                <a href="{% url 'impresion3d_editar' impresion3d.id %}"><i class="bi bi-pencil-fill"></i></a>
-                <a href="{% url 'impresion3d_eliminar' impresion3d.id %}"><i class="bi bi-trash text-danger"></i></a>
+                <a href="{% url 'impresion3d-detalle' i3d.id %}"><i class="bi bi-eye"></i></a>
+                {% if user.id == i3d.usuario.id %}
+                <a href="{% url 'impresion3d-editar' i3d.id %}"><i class="bi bi-pencil-fill"></i></a>
+                <a href="{% url 'impresion3d-borrar' i3d.id %}"><i class="bi bi-trash text-danger"></i></a>
                 <br>
                 <br>
                 <br>

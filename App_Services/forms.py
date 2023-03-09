@@ -1,6 +1,7 @@
 from django.contrib.auth.forms import UserChangeForm, UserCreationForm, PasswordChangeForm
 from django import forms
 from django.contrib.auth.models import User 
+from django.contrib.auth.admin import UserAdmin 
 
 from .models import Servicio, Comentario
 

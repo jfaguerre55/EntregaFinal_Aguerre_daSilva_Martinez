@@ -44,7 +44,7 @@ class RegistroPagina(FormView):
 
 class UsuarioEdicion(UpdateView):
     form_class = FormularioEdicion
-    template_name= 'App_Services/edicion-perfil.html'
+    template_name= 'App_Services/editar-perfil.html'
     success_url = reverse_lazy('home')
 
     def get_object(self):

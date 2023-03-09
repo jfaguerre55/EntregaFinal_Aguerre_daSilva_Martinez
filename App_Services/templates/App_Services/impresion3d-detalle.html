@@ -9,15 +9,14 @@
 
 <p><h4>{{impresion3d.titulo}}</h4></p>
 {% if impresion3d.imagenInstrumento %}
-    <p><img src="{{impresion3d.imagenInstrumento.url}}" alt=""></p>
+    <p><img src="{{impresion3d.imagen_servicio.url}}" alt=""></p>
 {% endif %}
 <p>Marca: {{impresion3d.marca}}</p>
 <p>Modelo: {{impresion3d.modelo}}</p>
 <p>Descripción: {{impresion3d.descripcion}}</p>
-<p>Año: {{impresion3d.year}}</p>
-<p>Precio(US$): {{impresion3d.precio}}</p>
-<p>Teléfono de Contacto: {{impresion3d.telefonoContacto}}</p>
-<p>Email de Contacto: {{impresion3d.emailContacto}}</p>
+<p>Año: {{impresion3d.anio}}</p>
+<p>Teléfono de Contacto: {{impresion3d.telefono_contacto}}</p>
+<p>Email de Contacto: {{impresion3d.email_contacto}}</p>
 
 </div>
 <br>
@@ -26,7 +25,7 @@
     <br>
     <div class="container">
     {% if not impresion3d.comentarios.all %}
-        No han comentado este instrumento
+        No han comentado este servicio
     {% else %}
         {% for comentario in impresion3d.comentarios.all %}
         <p><strong>{{comentario.nombre}}</strong></p>
