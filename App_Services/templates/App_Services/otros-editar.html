@@ -1,15 +1,15 @@
-{% extends 'Base/home.html' %}
+{% extends 'App_Services/home.html' %}
 
 {% block content %}
 
 <br>
 <br>
 
-{% if user.id == bajo.usuario.id %}
+{% if user.id == otros.usuario.id %}
 
 <div class="container">
 
-    <h4>Editar Bajo</h4>
+    <h4>Editar Instrumento</h4>
     
 </div>
 
@@ -27,5 +27,4 @@
 <h4>No tienes acceso a esta pagina!</h4>
 </div>
 {% endif %}
-
 {% endblock %}

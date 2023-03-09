@@ -1,4 +1,4 @@
-{% extends 'Base/home.html' %}
+{% extends 'App_Services/home.html' %}
 
 {% block content %}
 
@@ -6,7 +6,7 @@
 <br>
 
 <div class="container">
-    <h1 class="text-center">Agrega un nuevo instrumento</h1>
+    <h1 class="text-center">Agrega un nuevo servicio</h1>
 <div class="form-group">
 <form style=" width: 50vw; margin-left : 15vw;" method="post" enctype="multipart/form-data">{% csrf_token %}
     {{ form.as_p }}

@@ -1,4 +1,4 @@
-{% extends 'Base/home.html' %}
+{% extends 'App_Services/home.html' %}
 
 {% block content %}
 
@@ -12,11 +12,11 @@
 <br>
 
 
-{% if user.id == pedal.usuario.id %}
+{% if user.id == impresion3d.usuario.id %}
 <div class="container text-center">
 
 <form method="post">{% csrf_token %}
-    <h4>Estás seguro(a) que deseas borrar el pedal {{pedal.marca}} {{pedal.modelo}} ?</h4>
+    Estás seguro que deseas borrar la impresora 3D {{impresion3d.marca}} {{impresion3d.modelo}} ?
     <p>
         <button type="submit" class="btn btn-danger">Eliminar</button>
     </p>

@@ -1,0 +1,43 @@
+{% extends 'App_Services/home.html' %}
+
+{% block content %}
+
+<br>
+<br>
+
+<div class="container">
+
+
+<p><h4>{{software.titulo}}</h4></p>
+{% if software.imagenInstrumento %}
+    <p><img src="{{software.imagenInstrumento.url}}" alt=""></p>
+{% endif %}
+<p>Marca: {{software.marca}}</p>
+<p>Modelo: {{software.modelo}}</p>
+<p>Descripción: {{software.descripcion}}</p>
+<p>Año: {{software.year}}</p>
+<p>Precio(US$): {{software.precio}}</p>
+<p>Teléfono de Contacto: {{software.telefonoContacto}}</p>
+<p>Email de Contacto: {{software.emailContacto}}</p>
+
+</div>
+<br>
+<div class="container">
+    <h4>Comentarios...</h4>
+    <br>
+    <div class="container">
+    {% if not software.comentarios.all %}
+        No han comentado este instrumento
+    {% else %}
+        {% for comentario in software.comentarios.all %}
+        <p><strong>{{comentario.nombre}}</strong></p>
+        <p>{{comentario.mensaje}}</p>
+        <p><small>{{comentario.fechaComentario}}</small></p>
+        <hr>
+        {% endfor %}
+    {% endif %}
+    <a href="{% url 'comentario' software.pk %}">Agrega un Comentario</a>
+    </div>
+</div>
+<br>
+{% endblock %}

@@ -1,14 +1,14 @@
-{% extends 'Base/home.html' %}
+{% extends 'App_Services/home.html' %}
 
 {% block content %}
 
 <br>
 <br>
 
-{% if user.id == teclado.usuario.id %}
+{% if user.id == software.usuario.id %}
 <div class="container">
 
-    <h4>Editar Teclado</h4>
+    <h4>Editar software</h4>
     
 </div>
 
@@ -26,4 +26,5 @@
 <h4>No tienes acceso a esta pagina!</h4>
 </div>
 {% endif %}
+
 {% endblock %}

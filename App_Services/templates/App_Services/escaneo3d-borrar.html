@@ -1,4 +1,6 @@
-{% extends 'Base/home.html' %}
+{% extends 'App_Services/home.html' %}
+
+
 
 {% block content %}
 
@@ -12,11 +14,11 @@
 <br>
 
 
-{% if user.id == amplificador.usuario.id %}
+{% if user.id == escaneo3D.usuario.id %}
 <div class="container text-center">
 
 <form method="post">{% csrf_token %}
-    Estás seguro que deseas borrar el amplificador {{amplificador.marca}} {{amplificador.modelo}} ?
+    <h4>Estás seguro(a) que deseas borrar el escaneo3D {{escaneo3D.marca}} {{escaneo3D.modelo}} ?</h4>
     <p>
         <button type="submit" class="btn btn-danger">Eliminar</button>
     </p>
@@ -35,5 +37,4 @@
 <br>
 <br>
 <br>
-
 {% endblock %}
