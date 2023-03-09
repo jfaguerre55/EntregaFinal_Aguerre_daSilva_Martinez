@@ -1,0 +1,42 @@
+{% extends 'App_Services/home.html' %}
+
+{% block content %}
+
+<br>
+<br>
+
+<div class="container">
+
+<p><h4>{{impresion3d.titulo}}</h4></p>
+{% if impresion3d.imagenInstrumento %}
+    <p><img src="{{impresion3d.imagenInstrumento.url}}" alt=""></p>
+{% endif %}
+<p>Marca: {{impresion3d.marca}}</p>
+<p>Modelo: {{impresion3d.modelo}}</p>
+<p>Descripción: {{impresion3d.descripcion}}</p>
+<p>Año: {{impresion3d.year}}</p>
+<p>Precio(US$): {{impresion3d.precio}}</p>
+<p>Teléfono de Contacto: {{impresion3d.telefonoContacto}}</p>
+<p>Email de Contacto: {{impresion3d.emailContacto}}</p>
+
+</div>
+<br>
+<div class="container">
+    <h4>Comentarios...</h4>
+    <br>
+    <div class="container">
+    {% if not impresion3d.comentarios.all %}
+        No han comentado este instrumento
+    {% else %}
+        {% for comentario in impresion3d.comentarios.all %}
+        <p><strong>{{comentario.nombre}}</strong></p>
+        <p>{{comentario.mensaje}}</p>
+        <p><small>{{comentario.fechaComentario}}</small></p>
+        <hr>
+        {% endfor %}
+    {% endif %}
+    <a href="{% url 'comentario' impresion3d.pk %}">Agrega un Comentario</a>
+    </div>
+</div>
+<br>
+{% endblock %}

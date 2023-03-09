@@ -1,0 +1,42 @@
+{% extends 'App_Services/home.html' %}
+
+{% block content %}
+
+<br>
+<br>
+
+<div class="container">
+
+<p><h4>{{escaneo3D.titulo}}</h4></p>
+{% if escaneo3D.imagenServicio %}
+    <p><img src="{{escaneo3D.imagenServicio.url}}" alt=""></p>
+{% endif %}
+<p>Marca: {{escaneo3D.marca}}</p>
+<p>Modelo: {{escaneo3D.modelo}}</p>
+<p>Descripción: {{escaneo3D.descripcion}}</p>
+<p>Año: {{escaneo3D.year}}</p>
+<p>Precio(US$): {{escaneo3D.precio}}</p>
+<p>Teléfono de Contacto: {{escaneo3D.telefonoContacto}}</p>
+<p>Email de Contacto: {{escaneo3D.emailContacto}}</p>
+
+</div>
+<br>
+<div class="container">
+    <h4>Comentarios...</h4>
+    <br>
+    <div class="container">
+    {% if not escaneo3D.comentarios.all %}
+        No han comentado este instrumento
+    {% else %}
+        {% for comentario in escaneo3D.comentarios.all %}
+        <p><strong>{{comentario.nombre}}</strong></p>
+        <p>{{comentario.mensaje}}</p>
+        <p><small>{{comentario.fechaComentario}}</small></p>
+        <hr>
+        {% endfor %}
+    {% endif %}
+    <a href="{% url 'comentario' escaneo3D.pk %}">Agrega un Comentario</a>
+    </div>
+</div>
+
+{% endblock %}
