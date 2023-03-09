@@ -1,0 +1,40 @@
+{% extends 'App_Services/home.html' %}
+
+{% block content %}
+
+<br>
+<br>
+
+
+
+
+
+<div class="container text-center">
+    <h1>impresion3d</h1>
+</div>
+
+<br>
+
+<div class="container text-center">
+    <div class="row">
+            {% for i3d in impresion3d %}
+            <div class="col-sm-6 align-items-center">
+                <div class="card-body">
+                <img src="{{impresion3d.imagenInstrumento.url}}" class="" width="100px">
+                {{i3d.titulo}}
+                <a href="{% url 'impresion3d' impresion3d.id %}"><i class="bi bi-eye"></i></a>
+                {% if user.id == impresion3d.usuario.id %}
+                <a href="{% url 'impresion3d_editar' impresion3d.id %}"><i class="bi bi-pencil-fill"></i></a>
+                <a href="{% url 'impresion3d_eliminar' impresion3d.id %}"><i class="bi bi-trash text-danger"></i></a>
+                <br>
+                <br>
+                <br>
+                <br>
+                {% endif %}
+                </div>
+            </div>
+            {% endfor %}
+    </div>
+</div>
+
+{% endblock %}
