@@ -3,7 +3,6 @@ from django.urls import path
 from django.contrib.auth.views import LogoutView
 from .views import *
 
-
 urlpatterns = [
     path('', HomeView.as_view(), name='home'),
 
@@ -12,10 +11,10 @@ urlpatterns = [
     path('registro/', RegistroPagina.as_view(), name='registro'),
     path('editar-perfil/', UsuarioEdicion.as_view(), name='editar-perfil'),
     path('password-cambio/', CambioPassword.as_view(), name='cambiar-password'),
-    path('password-exitoso/' , views.password_exitoso, name='password-exitoso'),
+    path('password-exitoso/' , password_exitoso, name='password-exitoso'),
 
     path('creacion-servicio/', ServicioCreacion.as_view(), name='creacion-servicio'),
-    path('acerca-de-nosotros/', views.about, name='acerca-de-nosotros'),
+    path('acerca-de-nosotros/', about, name='acerca-de-nosotros'),
 
     path('impresion3d-lista/', Impresion3DLista.as_view(), name='impresion3d-lista'),
     path('escaneo3d-lista/', Escaneo3DLista.as_view(), name='escaneo3d-lista'),

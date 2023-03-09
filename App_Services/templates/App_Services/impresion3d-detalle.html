@@ -30,7 +30,7 @@
         {% for comentario in impresion3d.comentarios.all %}
         <p><strong>{{comentario.nombre}}</strong></p>
         <p>{{comentario.mensaje}}</p>
-        <p><small>{{comentario.fechaComentario}}</small></p>
+        <p><small>{{comentario.fecha_comentario}}</small></p>
         <hr>
         {% endfor %}
     {% endif %}

@@ -98,7 +98,7 @@ def about(request):
 
 class Impresion3DLista(LoginRequiredMixin, ListView):
     context_object_name = 'impresion3d'
-    queryset = Servicio.objects.filter(instrumento__startswith='impresion3d')
+    queryset = Servicio.objects.filter(servicio__startswith='impresion3d')
     template_name = 'App_Services/impresion3d-lista.html'
     login_url = '/login/'
 
@@ -125,7 +125,7 @@ class Impresion3DDelete(LoginRequiredMixin, DeleteView):
 
 class Escaneo3DLista(LoginRequiredMixin, ListView):
     context_object_name = 'escaneo3d'
-    queryset = Servicio.objects.filter(instrumento__startswith='escaneo3d')
+    queryset = Servicio.objects.filter(servicio__startswith='escaneo3d')
     template_name = 'App_Services/escaneo3d-lista.html'
     login_url = '/login/'
 
@@ -152,7 +152,7 @@ class Escaneo3DDelete(LoginRequiredMixin, DeleteView):
 
 class SoftwareLista(LoginRequiredMixin, ListView):
     context_object_name = 'software'
-    queryset = Servicio.objects.filter(instrumento__startswith='software')
+    queryset = Servicio.objects.filter(servicio__startswith='software')
     template_name = 'App_Services/software-lista.html'
     login_url = '/login/'
 

@@ -14,9 +14,9 @@
 <p>Marca: {{escaneo3d.marca}}</p>
 <p>Modelo: {{escaneo3d.modelo}}</p>
 <p>Descripción: {{escaneo3d.descripcion}}</p>
-<p>Año: {{escaneo3d.year}}</p>
-<p>Teléfono de Contacto: {{escaneo3d.telefonoContacto}}</p>
-<p>Email de Contacto: {{escaneo3d.emailContacto}}</p>
+<p>Año: {{escaneo3d.anio}}</p>
+<p>Teléfono de Contacto: {{escaneo3d.telefono_contacto}}</p>
+<p>Email de Contacto: {{escaneo3d.email_contacto}}</p>
 
 </div>
 <br>
@@ -30,7 +30,7 @@
         {% for comentario in escaneo3d.comentarios.all %}
         <p><strong>{{comentario.nombre}}</strong></p>
         <p>{{comentario.mensaje}}</p>
-        <p><small>{{comentario.fechaComentario}}</small></p>
+        <p><small>{{comentario.fecha_comentario}}</small></p>
         <hr>
         {% endfor %}
     {% endif %}

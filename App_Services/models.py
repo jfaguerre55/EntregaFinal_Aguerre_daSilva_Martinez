@@ -22,7 +22,7 @@ class Servicio(models.Model):
     imagen_servicio = models.ImageField(null=True, blank=True, upload_to="imagenes/")
 
     class Meta:
-        ordering = ['usuario', '-fechaPublicacion']
+        ordering = ['usuario', '-fecha_publicacion']
 
     def __str__(self):
         return self.titulo
@@ -37,7 +37,7 @@ class Comentario(models.Model):
     fecha_comentario = models.DateTimeField(auto_now_add=True)
 
     class Meta:
-        ordering = ['-fechaComentario']
+        ordering = ['-fecha_comentario']
 
     def __str__(self):
         return '%s - %s' % (self.nombre, self.comentario)

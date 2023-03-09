@@ -86,16 +86,15 @@ class FormularioNuevoServicio(forms.ModelForm):
 class ActualizacionServicio(forms.ModelForm):
     class Meta:
         model = Servicio
-        fields = ('titulo', 'instrumento', 'marca', 'modelo', 'descripcion', 'anio', 'precio', 'telefono_contacto', 'email_contacto', 'imagen_servicio')
+        fields = ('titulo', 'servicio', 'marca', 'modelo', 'descripcion', 'anio', 'telefono_contacto', 'email_contacto', 'imagen_servicio')
 
         widgets = {
             'titulo' : forms.TextInput(attrs={'class': 'form-control'}),
-            'instrumento' : forms.Select(attrs={'class': 'form-control'}),
+            'servicio' : forms.Select(attrs={'class': 'form-control'}),
             'marca' : forms.TextInput(attrs={'class': 'form-control'}),
             'modelo' : forms.TextInput(attrs={'class': 'form-control'}),
             'descripcion' : forms.Textarea(attrs={'class': 'form-control'}),
             'anio' : forms.TextInput(attrs={'class': 'form-control'}),
-            'precio' : forms.TextInput(attrs={'class': 'form-control'}),
             'telefono_contacto' : forms.TextInput(attrs={'class': 'form-control'}),
             'email_contacto' : forms.TextInput(attrs={'class': 'form-control'}),
         }
