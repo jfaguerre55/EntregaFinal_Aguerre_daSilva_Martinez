@@ -14,8 +14,8 @@ urlpatterns = [
     path('password-cambio/', CambioPassword.as_view(), name='cambiar-password'),
     path('password-exitoso/' , views.password_exitoso, name='password-exitoso'),
 
-    path('creacion-servicio/', ServicioCreacion.as_view(), name='nuevo'),
-    path('acerca-de-nosotros/', views.about, name='acerca_de_mi'),
+    path('creacion-servicio/', ServicioCreacion.as_view(), name='creacion-servicio'),
+    path('acerca-de-nosotros/', views.about, name='acerca-de-nosotros'),
 
     path('impresion3d-lista/', Impresion3DLista.as_view(), name='impresion3d-lista'),
     path('escaneo3d-lista/', Escaneo3DLista.as_view(), name='escaneo3d-lista'),

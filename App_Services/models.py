@@ -1,7 +1,7 @@
 from django.db import models
 from django.contrib.auth.models import User
 
-# Create your models here.
+# Modelo de servicio que se puede ofrecer
 class Servicio(models.Model):
     servicioSeleccion = (
     ('impresion3D','Impresion3D'),
@@ -15,7 +15,7 @@ class Servicio(models.Model):
     marca = models.CharField(max_length=40)
     modelo = models.CharField(max_length=40)
     descripcion = models.TextField(null=True, blank=True)
-    year = models.IntegerField() 
+    anio = models.IntegerField() 
     fecha_publicacion = models.DateTimeField(auto_now_add=True)
     telefono_contacto = models.IntegerField()
     email_contacto = models.EmailField()

@@ -4,9 +4,12 @@ from django.contrib.auth.models import User
 
 from .models import Servicio, Comentario
 
+
+# USUARIOS 
+
 class FormularioRegistroUsuario(UserCreationForm):
-    first_name = forms.CharField(max_length=20, label='Nombre', widget=forms.TextInput(attrs={'class':'form-control'}))
-    last_name = forms.CharField(max_length=20, label='Apellido', widget=forms.TextInput(attrs={'class':'form-control'}))
+    nombre = forms.CharField(max_length=20, label='Nombre', widget=forms.TextInput(attrs={'class':'form-control'}))
+    apellido = forms.CharField(max_length=20, label='Apellido', widget=forms.TextInput(attrs={'class':'form-control'}))
     email = forms.EmailField(widget=forms.EmailInput(attrs={'class':'form-control'}))
     username = forms.CharField(max_length=20, label='Usuario', widget=forms.TextInput(attrs={'class':'form-control'}))
     password1 = forms.CharField(label='Contraseña', widget=forms.PasswordInput(attrs={'class':'form-control'}))
@@ -14,54 +17,39 @@ class FormularioRegistroUsuario(UserCreationForm):
     
     class Meta:
         model = User
-        fields = ('email', 'username', 'first_name', 'last_name', 'password1', 'password2')
+        fields = ('email', 'username', 'nombre', 'apellido', 'password1', 'password2')
+
 
 
 class FormularioEdicion(UserChangeForm):
     password = None
     email = forms.CharField(widget=forms.EmailInput(attrs={'class':'form-control'}))
-    first_name = forms.CharField(max_length=20, label='Nombre', widget=forms.TextInput(attrs={'class':'form-control'}))
-    last_name = forms.CharField(max_length=20, label='Apellido', widget=forms.TextInput(attrs={'class':'form-control'}))
+    nombre = forms.CharField(max_length=20, label='Nombre', widget=forms.TextInput(attrs={'class':'form-control'}))
+    apellido = forms.CharField(max_length=20, label='Apellido', widget=forms.TextInput(attrs={'class':'form-control'}))
     username = forms.CharField(max_length=20, label='Usuario', widget=forms.TextInput(attrs={'class':'form-control'}))
 
     class Meta:
         model = User
-        fields = ('email', 'username', 'first_name', 'last_name')
+        fields = ('email', 'username', 'nombre', 'apellido')
 
-class FormularioNuevoServicio(forms.ModelForm):
+
+
+class FormularioCambioPassword(PasswordChangeForm):
+    old_pass = forms.CharField(label=("Contraseña actual"),
+                                   widget=forms.PasswordInput(attrs={'class':'form-control'}))
+    new_pass1 = forms.CharField(label=("Contraseña nueva"),
+                                   widget=forms.PasswordInput(attrs={'class':'form-control'}))
+    new_pass2 = forms.CharField(label=("Repita contraseña nueva"),
+                                   widget=forms.PasswordInput(attrs={'class':'form-control'}))
+
     class Meta:
-        model = Servicio
-        fields = ('usuario', 'titulo', 'instrumento', 'marca', 'modelo', 'descripcion', 'year', 'precio', 'telefonoContacto', 'emailContacto', 'imagenInstrumento')
+        model = User
+        fields = ('old_pass', 'new_pass1', 'new_pass2')
 
-        widgets = {
-            'usuario': forms.TextInput(attrs={'class': 'form-control', 'value': '', 'id':'usuario_id', 'type':'hidden'}),
-            'titulo' : forms.TextInput(attrs={'class': 'form-control'}),
-            'instrumento' : forms.Select(attrs={'class': 'form-control'}),
-            'marca' : forms.TextInput(attrs={'class': 'form-control'}),
-            'modelo' : forms.TextInput(attrs={'class': 'form-control'}),
-            'descripcion' : forms.Textarea(attrs={'class': 'form-control'}),
-            'year' : forms.TextInput(attrs={'class': 'form-control'}),
-            'precio' : forms.TextInput(attrs={'class': 'form-control'}),
-            'telefonoContacto' : forms.TextInput(attrs={'class': 'form-control'}),
-            'emailContacto' : forms.TextInput(attrs={'class': 'form-control'}),
-        }
 
-class ActualizacionServicio(forms.ModelForm):
-    class Meta:
-        model = Servicio
-        fields = ('titulo', 'instrumento', 'marca', 'modelo', 'descripcion', 'year', 'precio', 'telefonoContacto', 'emailContacto', 'imagenInstrumento')
 
-        widgets = {
-            'titulo' : forms.TextInput(attrs={'class': 'form-control'}),
-            'instrumento' : forms.Select(attrs={'class': 'form-control'}),
-            'marca' : forms.TextInput(attrs={'class': 'form-control'}),
-            'modelo' : forms.TextInput(attrs={'class': 'form-control'}),
-            'descripcion' : forms.Textarea(attrs={'class': 'form-control'}),
-            'year' : forms.TextInput(attrs={'class': 'form-control'}),
-            'precio' : forms.TextInput(attrs={'class': 'form-control'}),
-            'telefonoContacto' : forms.TextInput(attrs={'class': 'form-control'}),
-            'emailContacto' : forms.TextInput(attrs={'class': 'form-control'}),
-        }
+
+# COMENTARIOS
 
 class FormularioComentario(forms.ModelForm):
     class Meta:
@@ -72,14 +60,42 @@ class FormularioComentario(forms.ModelForm):
             'mensaje' : forms.Textarea(attrs={'class': 'form-control'}),
         }
 
-class FormularioCambioPassword(PasswordChangeForm):
-    old_password = forms.CharField(label=("Password Actual"),
-                                   widget=forms.PasswordInput(attrs={'class':'form-control'}))
-    new_password1 = forms.CharField(label=("Nuevo Password"),
-                                   widget=forms.PasswordInput(attrs={'class':'form-control'}))
-    new_password2 = forms.CharField(label=("Repita Nuevo Password"),
-                                   widget=forms.PasswordInput(attrs={'class':'form-control'}))
 
+
+
+# SERVICIOS 
+
+class FormularioNuevoServicio(forms.ModelForm):
     class Meta:
-        model = User
-        fields = ('old_password', 'new_password1', 'new_password2')
+        model = Servicio
+        fields = ('usuario', 'titulo', 'servicio', 'marca', 'modelo', 'descripcion', 'anio', 'telefono_contacto', 'email_contacto', 'imagen_servicio')
+
+        widgets = {
+            'usuario': forms.TextInput(attrs={'class': 'form-control', 'value': '', 'id':'usuario_id', 'type':'hidden'}),
+            'titulo' : forms.TextInput(attrs={'class': 'form-control'}),
+            'servicio' : forms.Select(attrs={'class': 'form-control'}),
+            'marca' : forms.TextInput(attrs={'class': 'form-control'}),
+            'modelo' : forms.TextInput(attrs={'class': 'form-control'}),
+            'descripcion' : forms.Textarea(attrs={'class': 'form-control'}),
+            'anio' : forms.TextInput(attrs={'class': 'form-control'}),
+            'telefono_contacto' : forms.TextInput(attrs={'class': 'form-control'}),
+            'email_contacto' : forms.TextInput(attrs={'class': 'form-control'}),
+        }
+
+class ActualizacionServicio(forms.ModelForm):
+    class Meta:
+        model = Servicio
+        fields = ('titulo', 'instrumento', 'marca', 'modelo', 'descripcion', 'anio', 'precio', 'telefono_contacto', 'email_contacto', 'imagen_servicio')
+
+        widgets = {
+            'titulo' : forms.TextInput(attrs={'class': 'form-control'}),
+            'instrumento' : forms.Select(attrs={'class': 'form-control'}),
+            'marca' : forms.TextInput(attrs={'class': 'form-control'}),
+            'modelo' : forms.TextInput(attrs={'class': 'form-control'}),
+            'descripcion' : forms.Textarea(attrs={'class': 'form-control'}),
+            'anio' : forms.TextInput(attrs={'class': 'form-control'}),
+            'precio' : forms.TextInput(attrs={'class': 'form-control'}),
+            'telefono_contacto' : forms.TextInput(attrs={'class': 'form-control'}),
+            'email_contacto' : forms.TextInput(attrs={'class': 'form-control'}),
+        }
+
