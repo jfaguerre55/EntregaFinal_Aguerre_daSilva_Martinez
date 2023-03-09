@@ -20,12 +20,12 @@
             {% for otro in otros %}
             <div class="col-sm-6 align-items-center">
                 <div class="card-body">
-                <img src="{{otros.imagenInstrumento.url}}" class="" width="100px">
-                {{otros.titulo}}
-                <a href="{% url 'otros' otros.id %}"><i class="bi bi-eye"></i></a>
-                {% if user.id == otros.usuario.id %}
-                <a href="{% url 'otros_editar' otros.id %}"><i class="bi bi-pencil-fill"></i></a>
-                <a href="{% url 'otros_eliminar' otros.id %}"><i class="bi bi-trash text-danger"></i></a>
+                <img src="{{otro.imagen_servicio.url}}" class="" width="100px">
+                {{otro.titulo}}
+                <a href="{% url 'otros-detalle' otro.id %}"><i class="bi bi-eye"></i></a>
+                {% if user.id == otro.usuario.id %}
+                <a href="{% url 'otros_editar' otro.id %}"><i class="bi bi-pencil-fill"></i></a>
+                <a href="{% url 'otros_eliminar' otro.id %}"><i class="bi bi-trash text-danger"></i></a>
                 <br>
                 <br>
                 <br>

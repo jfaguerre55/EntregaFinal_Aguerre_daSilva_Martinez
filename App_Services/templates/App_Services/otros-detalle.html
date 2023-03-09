@@ -8,16 +8,15 @@
 <div class="container">
 
 <p><h4>{{otros.titulo}}</h4></p>
-{% if otros.imagenInstrumento %}
-    <p><img src="{{otros.imagenInstrumento.url}}" alt=""></p>
+{% if otros.imagenServicios %}
+    <p><img src="{{otros.imagen_servicio.url}}" alt=""></p>
 {% endif %}
 <p>Marca: {{otros.marca}}</p>
 <p>Modelo: {{otros.modelo}}</p>
 <p>Descripción: {{otros.descripcion}}</p>
-<p>Año: {{otros.year}}</p>
-<p>Precio(US$): {{otros.precio}}</p>
-<p>Teléfono de Contacto: {{otros.telefonoContacto}}</p>
-<p>Email de Contacto: {{otros.emailContacto}}</p>
+<p>Año: {{otros.anio}}</p>
+<p>Teléfono de Contacto: {{otros.telefono_contacto}}</p>
+<p>Email de Contacto: {{otros.email_contacto}}</p>
 
 </div>
 <br>
