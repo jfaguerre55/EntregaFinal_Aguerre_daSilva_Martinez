@@ -1,0 +1,40 @@
+{% extends 'Base/home.html' %}
+
+{% block content %}
+
+<br>
+<br>
+
+
+
+
+
+<div class="container text-center">
+    <h1>Teclados</h1>
+</div>
+
+<br>
+
+<div class="container text-center">
+    <div class="row">
+            {% for teclado in teclados %}
+            <div class="col-sm-6 align-items-center">
+                <div class="card-body">
+                <img src="{{teclado.imagenInstrumento.url}}" class="" width="100px">
+                {{teclado.titulo}}
+                <a href="{% url 'teclado' teclado.id %}"><i class="bi bi-eye"></i></a>
+                {% if user.id == teclado.usuario.id %}
+                <a href="{% url 'teclado_editar' teclado.id %}"><i class="bi bi-pencil-fill"></i></a>
+                <a href="{% url 'teclado_eliminar' teclado.id %}"><i class="bi bi-trash text-danger"></i></a>
+                <br>
+                <br>
+                <br>
+                <br>
+                {% endif %}
+                </div>
+            </div>
+            {% endfor %}
+    </div>
+</div>
+<br>
+{% endblock %}
