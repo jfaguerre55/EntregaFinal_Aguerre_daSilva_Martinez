@@ -22,3 +22,6 @@ Una vez registrados los usuarios pueden modificar o eliminar sus publicaciones y
 Juan Aguerre se encargó de desarrollar las vistas y modelos de la App de servicios.
 Ayrton estuvo encargado de desarrollar el contenido HTML y su integración con el backend y los formularios.
 Sebastian se encargó de la App de usuario de la aplicación (altas, bajas y modificaciones).
+
+# Video de presentación
+https://youtu.be/Hb0fkIB1S28 
