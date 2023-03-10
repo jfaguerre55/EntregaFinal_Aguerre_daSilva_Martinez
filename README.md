@@ -14,7 +14,7 @@ Los servicios están divididos en 4 categorias:\
 1- Impresión 3D\
 2- Escaneo 3D\
 3- Software\
-4- Otros\
+4- Otros
 
 Una vez registrados los usuarios pueden modificar o eliminar sus publicaciones y también dejar comentarios a publicaciones de terceros para contactarse o informarse sobre algún servicio tecnológico.
 
