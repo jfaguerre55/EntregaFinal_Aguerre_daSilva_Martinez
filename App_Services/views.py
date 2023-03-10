@@ -146,7 +146,7 @@ class OtrosDelete(LoginRequiredMixin, DeleteView):
     model = Servicio
     success_url = reverse_lazy('otros-lista')
     context_object_name = 'otros'
-    template_name = 'App_Services/otros-eliminar.html'
+    template_name = 'App_Services/otros-borrar.html'
 
 
 
