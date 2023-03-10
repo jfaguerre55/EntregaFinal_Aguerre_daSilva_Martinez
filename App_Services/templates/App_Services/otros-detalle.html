@@ -8,7 +8,7 @@
 <div class="container">
 
 <p><h4>{{otros.titulo}}</h4></p>
-{% if otros.imagenServicios %}
+{% if otros.imagen_servicio %}
     <p><img src="{{otros.imagen_servicio.url}}" alt=""></p>
 {% endif %}
 <p>Marca: {{otros.marca}}</p>
@@ -21,11 +21,11 @@
 </div>
 <br>
 <div class="container">
-    <h4>Comentarios...</h4>
+    <h4>Contactate con el vendedor</h4>
     <br>
     <div class="container">
     {% if not otros.comentarios.all %}
-        No han comentado este instrumento
+        No han comentado este servicio
     {% else %}
         {% for comentario in otros.comentarios.all %}
         <p><strong>{{comentario.nombre}}</strong></p>

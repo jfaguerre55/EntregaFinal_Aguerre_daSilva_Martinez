@@ -10,7 +10,8 @@
 
 
 <div class="container text-center">
-    <h1>softwares</h1>
+    <br>
+    <h1>Software de diseño</h1>
 </div>
 
 <br>
@@ -20,7 +21,7 @@
             {% for soft in software %}
             <div class="col-sm-6 align-items-center">
                 <div class="card-body">
-                <img src="{{software.imagen_servicio.url}}" class="" width="100px">
+                <img src="{{soft.imagen_servicio.url}}" class="" width="100px">
                 {{soft.titulo}}
                 <a href="{% url 'software-detalle' soft.id %}"><i class="bi bi-eye"></i></a>
                 {% if user.id == software.usuario.id %}

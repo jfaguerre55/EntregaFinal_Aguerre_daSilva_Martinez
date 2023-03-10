@@ -1,14 +1,15 @@
 from django.views.generic import TemplateView, ListView, DetailView, UpdateView
 from django.views.generic.edit import CreateView, UpdateView, DeleteView, FormView 
 from django.contrib.auth.views import LoginView, PasswordChangeView
-#from django.contrib.auth.forms import PasswordChangeForm
+from django.contrib.auth.forms import PasswordChangeForm
 from django.contrib.auth.mixins import LoginRequiredMixin
-#from django.contrib.auth.models import User
+from django.contrib.auth.models import User
 from django.contrib.auth import login
 from django.shortcuts import redirect, render
 from django.urls import reverse_lazy
 from .models import Servicio, Comentario
 from .forms import *
+
 
 class HomeView(LoginRequiredMixin, TemplateView):
     template_name = 'App_Services/home.html'
@@ -180,7 +181,7 @@ class SoftwareDelete(LoginRequiredMixin, DeleteView):
 
 class OtrosLista(LoginRequiredMixin, ListView):
     context_object_name = 'otros'
-    queryset = Servicio.objects.filter(servicio__startswith='otros')
+    queryset = Servicio.objects.filter(servicio__startswith='otro')
     template_name = 'App_Services/otros-lista.html'
     login_url = '/login/'
 
@@ -194,13 +195,13 @@ class OtrosUpdate(LoginRequiredMixin, UpdateView):
     form_class = ActualizacionServicio
     success_url = reverse_lazy('otros-lista')
     context_object_name = 'otros'
-    template_name = 'App_Services/otros_editar.html'
+    template_name = 'App_Services/otros-editar.html'
 
 class OtrosDelete(LoginRequiredMixin, DeleteView):
     model = Servicio
     success_url = reverse_lazy('otros-lista')
     context_object_name = 'otros'
-    template_name = 'App_Services/otros_eliminar.html'
+    template_name = 'App_Services/otros-eliminar.html'
 
 
 

@@ -29,7 +29,7 @@ urlpatterns = [
     path('impresion3d-editar/<int:pk>/', Impresion3DUpdate.as_view(), name='impresion3d-editar'),
     path('escaneo3d-editar/<int:pk>/', Escaneo3DUpdate.as_view(), name='escaneo3d-editar'),
     path('software-editar/<int:pk>/', SoftwareUpdate.as_view(), name='software-editar'),
-    path('otros-editar/<int:pk>/', OtrosUpdate.as_view(), name='otros_editar'),
+    path('otros-editar/<int:pk>/', OtrosUpdate.as_view(), name='otros-editar'),
 
     path('impresion3d-borrar/<int:pk>/', Impresion3DDelete.as_view(), name='impresion3d-borrar'),
     path('escaneo3d-borrar/<int:pk>/', Escaneo3DDelete.as_view(), name='escaneo3d-borrar'),
