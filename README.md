@@ -6,7 +6,7 @@ Coderhouse: 48265-python
 # Alumnos:
 Juan Aguerre - jaguerre@adimra.org.ar\
 Ayrton da Silva - adasilva@cetem.org.ar\
-Sebastian Martinez - smartinez@cetem.org.ar\
+Sebastian Martinez - smartinez@cetem.org.ar
 
 # Descripción del proyecto
 Desarrollamos un Marketplace de servicios tecnologicos. En esta aplicación los usuarios pueden registrarse y publicar servicios que quieran promocionar con la comunidad.
