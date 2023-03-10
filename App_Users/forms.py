@@ -34,12 +34,9 @@ class FormularioEdicion(UserChangeForm):
 
 
 class FormularioCambioPassword(PasswordChangeForm):
-    old_pass = forms.CharField(label=("Contraseña actual"),
-                                   widget=forms.PasswordInput(attrs={'class':'form-control'}))
-    new_pass1 = forms.CharField(label=("Contraseña nueva"),
-                                   widget=forms.PasswordInput(attrs={'class':'form-control'}))
-    new_pass2 = forms.CharField(label=("Repita contraseña nueva"),
-                                   widget=forms.PasswordInput(attrs={'class':'form-control'}))
+    old_password  = forms.CharField(label=("Contraseña actual"), widget=forms.PasswordInput(attrs={'class':'form-control'}))
+    new_password1 = forms.CharField(label=("Contraseña nueva"), widget=forms.PasswordInput(attrs={'class':'form-control'}))
+    new_password2 = forms.CharField(label=("Repita contraseña nueva"), widget=forms.PasswordInput(attrs={'class':'form-control'}))
 
     class Meta:
         model = User
