@@ -135,3 +135,4 @@ LOGIN_URL = '/login/'
 
 MEDIA_URL = '/imagenes/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'App_Services/static')
+

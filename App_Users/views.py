@@ -1,5 +1,5 @@
 from django.views.generic import TemplateView, UpdateView
-from django.views.generic.edit import UpdateView, FormView 
+from django.views.generic.edit import UpdateView, FormView, CreateView
 from django.contrib.auth.views import LoginView, PasswordChangeView
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.contrib.auth import login
@@ -57,5 +57,16 @@ class CambioPassword(PasswordChangeView):
 
 def password_exitoso(request):
     return render(request, 'App_Services/password-exitoso.html', {})
+
+
+class AvatarCreacion(LoginRequiredMixin, CreateView):
+    model = Avatar
+    form_class = FormularioCrearAvatar
+    success_url = reverse_lazy('editar-perfil')
+    template_name = 'App_Services/avatar-creacion.html'
+
+    def form_valid(self, form):
+        form.instance.user = self.request.user
+        return super(AvatarCreacion, self).form_valid(form)
 
 
