@@ -23,8 +23,12 @@
 </div>
 <br>
 
-<p class="text-center">Queres agregar una imagen a tu usuario?<a href="{% url 'creacion-avatar' %}"> Haz click acá</a></p>
-<p class="text-center">Necesitas cambiar la contraseña?<a href="{% url 'cambiar-password' %}"> Haz click acá</a></p>
+{% if user.avatar %}
+<p class="text-center">¿Deseas modificar tu imagen de usuario?<a href="{% url 'avatar-update' user.avatar.id %}"> Haz click acá</a></p>
+{% else %}
+<p class="text-center">¿Deseas crear tu imagen de usuario?<a href="{% url 'avatar-create' %}"> Haz click acá</a></p>
+{% endif %}
+<p class="text-center">¿Necesitas cambiar la contraseña?<a href="{% url 'cambiar-password' %}"> Haz click acá</a></p>
 
 <br>
 <br>

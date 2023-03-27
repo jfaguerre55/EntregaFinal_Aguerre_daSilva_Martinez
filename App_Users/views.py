@@ -59,14 +59,22 @@ def password_exitoso(request):
     return render(request, 'App_Services/password-exitoso.html', {})
 
 
-class AvatarCreacion(LoginRequiredMixin, CreateView):
+class AvatarCreate(LoginRequiredMixin, CreateView):
     model = Avatar
-    form_class = FormularioCrearAvatar
+    form_class = FormularioCreateAvatar
     success_url = reverse_lazy('editar-perfil')
-    template_name = 'App_Services/avatar-creacion.html'
+    template_name = 'App_Services/avatar-create.html'
+
 
     def form_valid(self, form):
         form.instance.user = self.request.user
-        return super(AvatarCreacion, self).form_valid(form)
+        return super(AvatarCreate, self).form_valid(form)
 
 
+
+class AvatarUpdate(LoginRequiredMixin, UpdateView):
+    model = Avatar
+    form_class = FormularioUpdateAvatar
+    success_url = reverse_lazy('editar-perfil')
+    context_object_name = 'avatar'
+    template_name = 'App_Services/avatar-update.html'

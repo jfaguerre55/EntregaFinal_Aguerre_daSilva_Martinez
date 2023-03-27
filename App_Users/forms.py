@@ -45,9 +45,20 @@ class FormularioCambioPassword(PasswordChangeForm):
 
 
 # AVATAR
-class FormularioCrearAvatar(forms.ModelForm):
+class FormularioCreateAvatar(forms.ModelForm):
     class Meta:
         model = Avatar
         fields = ('usuario', 'imagen_avatar')
-        exclude = ['usuario']
+
+        widgets = {
+            'usuario': forms.TextInput(attrs={'class': 'form-control', 'value': '', 'id':'usuario_id', 'type':'hidden'}),
+        }
+
+
+
+class FormularioUpdateAvatar(forms.ModelForm):
+    class Meta:
+        model = Avatar
+        fields = ('imagen_avatar',)
+
 

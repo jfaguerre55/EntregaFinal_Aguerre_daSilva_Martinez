@@ -8,5 +8,5 @@ class Avatar(models.Model):
     imagen_avatar = models.ImageField(null=True, blank=True, upload_to='imagenes')
 
     def __str__(self) -> str:
-        return self.user.username
+        return self.usuario.username
     

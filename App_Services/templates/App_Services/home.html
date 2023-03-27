@@ -66,7 +66,9 @@
                 </div>
                 <div class="container">
                 <li class="nav-item">
+                  {% if user.avatar.imagen_avatar %}
                   <img src="{{user.avatar.imagen_avatar.url}}" class="rounded-circle" height="40px" alt="{{ user.username }}" style="margin-right: 1rem;">
+                  {% endif %}
                 </li>
                 </div>
                 <div class="container">

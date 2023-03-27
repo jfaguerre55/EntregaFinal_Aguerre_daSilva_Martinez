@@ -12,6 +12,7 @@ urlpatterns = [
     path('editar-perfil/', UsuarioEdicion.as_view(), name='editar-perfil'),
     path('password-cambio/', CambioPassword.as_view(), name='cambiar-password'),
     path('password-exitoso/' , password_exitoso, name='password-exitoso'),
-    path('avatar-servicio/', AvatarCreacion.as_view(), name='creacion-avatar'),
+    path('avatar-create/', AvatarCreate.as_view(), name='avatar-create'),
+    path('avatar-update/<int:pk>/', AvatarUpdate.as_view(), name='avatar-update'),
 
 ]

@@ -7,9 +7,10 @@
 <br>
 
 <div class="container">
-    <h1 class="text-center">Agrega un nuevo Avatar</h1>
-<div class="form-group">
-    <br>
+    <h1 class="text-center">Crear Avatar</h1>
+</div>
+
+<br>
 <form style=" width: 50vw; margin-left : 15vw;" method="post" enctype="multipart/form-data">
     {% csrf_token %}
     {{ form.as_p }}
@@ -17,8 +18,6 @@
     <button type="submit" class="btn btn-primary">Guardar</button>
     </div>
 </form>
-</div>
-</div>
 
 <br>
 <br>
